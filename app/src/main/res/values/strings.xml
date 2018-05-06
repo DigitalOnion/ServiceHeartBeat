@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ServiceHeartBeat</string>
+    <string name="app_label">Services practice app - Luis Viruena</string>
+
+    <string name="chronos_service_description">The Chronos Service gives timestamp services to the Messaging Pigeon.</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_bind">Bind</string>
+    <string name="btn_ping">Ping</string>
+    <string name="btn_unbind">Unbind</string>
+    <string name="btn_terminate">Terminate</string>
+</resources>

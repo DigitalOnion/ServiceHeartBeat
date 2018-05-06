@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/button_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.30" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/button_guideline"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <Button
+        android:id="@+id/start"
+        android:text="@string/btn_start"
+        android:onClick="onClickBtnStart"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <Button
+        android:id="@+id/bind"
+        android:text="@string/btn_bind"
+        android:onClick="onClickBtnBind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintTop_toBottomOf="@id/start"
+        />
+
+    <Button
+        android:id="@+id/ping"
+        android:text="@string/btn_ping"
+        android:onClick="onClickBtnPing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintTop_toBottomOf="@id/bind"
+        />
+
+    <Button
+        android:id="@+id/unbind"
+        android:text="@string/btn_unbind"
+        android:onClick="onClickBtnUnbind"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintTop_toBottomOf="@id/ping"
+        />
+
+    <Button
+        android:id="@+id/terminate"
+        android:text="@string/btn_terminate"
+        android:onClick="onClickBtnTerminate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintTop_toBottomOf="@id/unbind"
+        />
+
+
+</android.support.constraint.ConstraintLayout>
