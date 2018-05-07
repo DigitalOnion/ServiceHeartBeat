@@ -35,6 +35,7 @@
         android:id="@+id/start"
         android:text="@string/btn_start"
         android:onClick="onClickBtnStart"
+        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -78,6 +79,7 @@
     <Button
         android:id="@+id/terminate"
         android:text="@string/btn_terminate"
+        android:visibility="gone"
         android:onClick="onClickBtnTerminate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -87,9 +89,9 @@
         />
 
     <Button
-        android:visibility="gone"
         android:id="@+id/btnTest"
         android:text="@string/btn_test"
+        android:visibility="gone"
         android:onClick="onClickBtnTest"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

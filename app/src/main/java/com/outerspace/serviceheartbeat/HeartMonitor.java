@@ -40,7 +40,7 @@ public class HeartMonitor extends View {
     private float maxTraceVal = 0.0f;
     private float yFactor = 1.0f;
 
-    private ClockTicTac clockTicTac;
+    //private ClockTicTac clockTicTac;
 
     public HeartMonitor(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -167,18 +167,18 @@ public class HeartMonitor extends View {
         addCacheTraceValues(heartBeatValues);
     }
 
-    public void startTicking() {
-        if( clockTicTac == null ) {
-            clockTicTac = new ClockTicTac();
-        }
-        clockTicTac.execute(null, null, null);
-    }
-
-    public void stopTicking() {
-        if( clockTicTac != null ) {
-            clockTicTac.cancel(true);
-        }
-    }
+//    public void startTicking() {
+//        if( clockTicTac == null ) {
+//            clockTicTac = new ClockTicTac();
+//        }
+//        clockTicTac.execute(null, null, null);
+//    }
+//
+//    public void stopTicking() {
+//        if( clockTicTac != null ) {
+//            clockTicTac.cancel(true);
+//        }
+//    }
 
     // Trace values are cached in a queue
     private void addCacheTraceValues(Float[] newValues) {
@@ -215,38 +215,38 @@ public class HeartMonitor extends View {
         fullTraceValues[ fullTraceValues.length-1 ] = next;
     }
 
-    private class ClockTicTac extends AsyncTask<Void, Void, Void> {
-        private Void myVoid = null;
-        private boolean keepGoing = true;
-
-        @Override
-        protected Void doInBackground(Void... voids) {
-            keepGoing = true;
-            while(true) {
-                try {
-                    Thread.sleep(50);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-                publishProgress();
-
-                if(!keepGoing) break;
-            }
-
-            return myVoid;
-        }
-
-        @Override
-        protected void onCancelled() {
-            keepGoing = false;
-            super.onCancelled();
-        }
-
-        @Override
-        protected void onProgressUpdate(Void... values) {
-            super.onProgressUpdate(values);
-            HeartMonitor.this.invalidate();
-        }
-
-    }
+//    private class ClockTicTac extends AsyncTask<Void, Void, Void> {
+//        private Void myVoid = null;
+//        private boolean keepGoing = true;
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            keepGoing = true;
+//            while(true) {
+//                try {
+//                    Thread.sleep(50);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//                publishProgress();
+//
+//                if(!keepGoing) break;
+//            }
+//
+//            return myVoid;
+//        }
+//
+//        @Override
+//        protected void onCancelled() {
+//            keepGoing = false;
+//            super.onCancelled();
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Void... values) {
+//            super.onProgressUpdate(values);
+//            HeartMonitor.this.invalidate();
+//        }
+//
+//    }
 }

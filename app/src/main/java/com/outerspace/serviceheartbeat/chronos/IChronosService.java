@@ -6,7 +6,7 @@ public interface IChronosService {
 
     public void removeClient(IChronosClient client);
 
-    public boolean isBound();
+    public void execute();
 
     public void pingService();
 

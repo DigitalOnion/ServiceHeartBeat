@@ -2,7 +2,7 @@ package com.outerspace.serviceheartbeat.presenter;
 
 public interface IMainPresenter {
 
-    public void doStartService() ;
+    // public void doStartService() ;
 
     public void doBindService() ;
 
@@ -10,6 +10,6 @@ public interface IMainPresenter {
 
     public void doUnbindService() ;
 
-    public void doTerminateService() ;
+    // public void doTerminateService() ;
 
 }

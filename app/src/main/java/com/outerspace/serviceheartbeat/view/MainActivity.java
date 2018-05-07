@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
 
     @Override
     protected void onStart() {
-        enableButton(0);
+        enableButton(1);
         super.onStart();
     }
 
@@ -44,19 +44,24 @@ public class MainActivity extends AppCompatActivity implements IMainView {
         return this.getBaseContext();
     }
 
-    @Override
-    public void startMonitor() {
-        monitor.startTicking();
-    }
-
-    @Override
-    public void stopMonitor() {
-        monitor.stopTicking();
-    }
+//    @Override
+//    public void startMonitor() {
+//        monitor.startTicking();
+//    }
+//
+//    @Override
+//    public void stopMonitor() {
+//        monitor.stopTicking();
+//    }
 
     @Override
     public void heartBeat() {
         monitor.addHeartBeat();
+    }
+
+    @Override
+    public void ticTok() {
+        monitor.invalidate();
     }
 
     private void enableButton(int... iBtns) {
@@ -67,8 +72,8 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     }
 
     public void onClickBtnStart(View view) {
-        enableButton(1);
-        presenter.doStartService();
+//        enableButton(1);
+//        presenter.doStartService();
     }
 
     public void onClickBtnBind(View view) {
@@ -82,13 +87,13 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     }
 
     public void onClickBtnUnbind(View view) {
-        enableButton(4);
+        enableButton(1);
         presenter.doUnbindService();
     }
 
     public void onClickBtnTerminate(View view) {
-        enableButton(0);
-        presenter.doTerminateService();
+//        enableButton(0);
+//        presenter.doTerminateService();
     }
 
     public void onClickBtnTest(View view) {

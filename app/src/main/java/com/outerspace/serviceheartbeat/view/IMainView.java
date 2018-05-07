@@ -6,9 +6,11 @@ public interface IMainView {
 
     public Context getContext();
 
-    public void startMonitor();
-
-    public void stopMonitor();
+//    public void startMonitor();
+//
+//    public void stopMonitor();
 
     public void heartBeat();
+
+    public void ticTok();
 }
