@@ -1,5 +1,6 @@
 package com.outerspace.serviceheartbeat.view;
 
+import com.outerspace.serviceheartbeat.HeartMonitor;
 import com.outerspace.serviceheartbeat.presenter.IMainPresenter;
 import com.outerspace.serviceheartbeat.presenter.MainPresenter;
 import com.outerspace.serviceheartbeat.R;
@@ -13,6 +14,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity implements IMainView {
     private IMainPresenter presenter = null;
     private Button[] buttons;
+    private HeartMonitor monitor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements IMainView {
                 (Button) findViewById(R.id.unbind),
                 (Button) findViewById(R.id.terminate),
         };
+        monitor = (HeartMonitor) findViewById(R.id.heart_monitor);
 
         presenter = new MainPresenter(this);
     }
@@ -39,6 +42,21 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     @Override
     public Context getContext() {
         return this.getBaseContext();
+    }
+
+    @Override
+    public void startMonitor() {
+        monitor.startTicking();
+    }
+
+    @Override
+    public void stopMonitor() {
+        monitor.stopTicking();
+    }
+
+    @Override
+    public void heartBeat() {
+        monitor.addHeartBeat();
     }
 
     private void enableButton(int... iBtns) {
@@ -71,6 +89,9 @@ public class MainActivity extends AppCompatActivity implements IMainView {
     public void onClickBtnTerminate(View view) {
         enableButton(0);
         presenter.doTerminateService();
+    }
+
+    public void onClickBtnTest(View view) {
     }
 
 }

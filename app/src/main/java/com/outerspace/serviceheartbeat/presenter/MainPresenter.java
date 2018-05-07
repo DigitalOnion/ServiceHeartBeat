@@ -28,6 +28,8 @@ public class MainPresenter implements IMainPresenter, IChronosClient {
     public void doStartService() {
         Intent intent = new Intent(view.getContext(), ChronosService.class);
         view.getContext().startService(intent);
+
+        view.startMonitor();
     }
 
     @Override
@@ -55,11 +57,13 @@ public class MainPresenter implements IMainPresenter, IChronosClient {
     public void doTerminateService() {
         if(chronosService != null)
             chronosService.terminateService();
+
+        view.stopMonitor();
     }
 
     @Override
     public void pingResponse(String response) {
-        Toast.makeText( view.getContext(), response, Toast.LENGTH_SHORT).show();
+        view.heartBeat();
     }
 
     private class MyServiceConnection implements ServiceConnection {

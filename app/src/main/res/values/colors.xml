@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="monitor_background">#FF008800</color>
+    <color name="monitor_grid">#36ec30</color>
+    <color name="monitor_trace_line">#ffeb3b</color>
+
 </resources>

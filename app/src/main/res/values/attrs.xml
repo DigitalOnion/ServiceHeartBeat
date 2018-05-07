@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HeartMonitor">
+        <attr name="background_color" format="color"/>
+        <attr name="grid_color" format="color"/>
+        <attr name="trace_color" format="color"/>
+        <attr name="vertical_divisions" format="integer"/>
+        <attr name="horizontal_divisions" format="integer"/>
+        <attr name="granulatiry" format="integer"/>
+        <attr name="cycles" format="float"/>
+    </declare-styleable>
+</resources>

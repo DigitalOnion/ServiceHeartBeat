@@ -8,4 +8,6 @@
     <string name="btn_ping">Ping</string>
     <string name="btn_unbind">Unbind</string>
     <string name="btn_terminate">Terminate</string>
+
+    <string name="btn_test">Test</string>
 </resources>

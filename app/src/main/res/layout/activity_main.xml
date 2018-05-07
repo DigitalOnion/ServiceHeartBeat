@@ -3,6 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
@@ -14,9 +15,18 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.30" />
 
-    <ImageView
+    <com.outerspace.serviceheartbeat.HeartMonitor
+        android:id="@+id/heart_monitor"
         android:layout_width="0dp"
         android:layout_height="match_parent"
+        android:layout_marginLeft="8dp"
+        app:horizontal_divisions="5"
+        app:vertical_divisions="6"
+        app:background_color="@color/monitor_background"
+        app:grid_color="@color/monitor_grid"
+        app:trace_color="@color/monitor_trace_line"
+        app:granulatiry="20"
+        app:cycles="2.5"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/button_guideline"
         app:layout_constraintRight_toRightOf="parent"/>
@@ -76,5 +86,16 @@
         app:layout_constraintTop_toBottomOf="@id/unbind"
         />
 
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btnTest"
+        android:text="@string/btn_test"
+        android:onClick="onClickBtnTest"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/button_guideline"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
 
 </android.support.constraint.ConstraintLayout>
